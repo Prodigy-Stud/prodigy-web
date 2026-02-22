@@ -150,35 +150,19 @@ export default function Home() {
                 {demoTabs.find((t) => t.id === activeDemo)?.description}
               </p>
 
-              {/* Placeholder for Screen Recording */}
-              <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#f5f0eb] to-[#e8e2dc] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="mb-3 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
-                    <svg
-                      className="h-8 w-8 text-accent"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm font-medium text-muted">Screen Recording Coming Soon</p>
-                  <p className="mt-1 text-xs text-muted/70">
-                    Demo for {demoTabs.find((t) => t.id === activeDemo)?.label}
+              {/* Screen Recording Video */}
+              <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#f5f0eb] to-[#e8e2dc]">
+                <video
+                  className="h-full w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/demo/prodigy-demo.mov" type="video/quicktime" />
+                  <p className="p-4 text-center text-sm text-muted">
+                    Your browser does not support the video format. Please try a different browser.
                   </p>
-                </div>
+                </video>
               </div>
             </div>
           </section>

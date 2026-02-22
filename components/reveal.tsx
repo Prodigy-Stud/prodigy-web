@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 type RevealProps = PropsWithChildren<{ className?: string; delay?: number }>;
 

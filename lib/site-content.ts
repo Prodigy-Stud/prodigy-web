@@ -1,4 +1,6 @@
 export const navLinks = [
+  { href: '#sources', label: 'Sources' },
+  { href: '#demos', label: 'See It In Action' },
   { href: '#how', label: 'How it Works' },
   { href: '#outputs', label: 'Outputs' },
   { href: '#why', label: 'Why Prodigy' },
@@ -10,11 +12,15 @@ export const pipeline = ['Signals', 'Insights', 'Ideas', 'Specs', 'Code'] as con
 export const sourceCards = [
   {
     title: 'Customer Feedback',
-    body: 'Support tickets, NPS comments, sales calls, interview notes, and reviews are clustered into recurring problem themes.'
+    body: 'Support tickets, NPS comments, sales calls, interview notes, and reviews are clustered into recurring problem themes. Prodigy uses AI to extract pain points, sentiment, and feature requests from unstructured text.'
   },
   {
     title: 'Usage Analytics',
-    body: 'Funnels, drop-offs, session behavior, and event trends reveal where users struggle or abandon value.'
+    body: 'Funnels, drop-offs, session behavior, and event trends reveal where users struggle or abandon value. Connect your analytics tools to identify friction points automatically.'
+  },
+  {
+    title: 'JIRA Exports',
+    body: 'Export ranked problems and feature concepts directly to JIRA with ready-to-assign tickets, acceptance criteria, and technical prompts for your engineering team.'
   }
 ] as const;
 
@@ -79,6 +85,52 @@ export const comparisonCards = [
     title: 'Static PM Docs',
     current: 'Capture assumptions manually.',
     contrast: 'Prodigy generates evidence-backed direction.'
+  }
+] as const;
+
+export const aiCapabilities = [
+  {
+    title: 'Natural Language Queries',
+    body: 'Ask questions in plain English and get instant insights from your product data. No SQL or analytics expertise required.'
+  },
+  {
+    title: 'Automatic Problem Clustering',
+    body: 'AI automatically groups similar feedback, identifies patterns, and surfaces the most impactful issues affecting your users.'
+  },
+  {
+    title: 'Smart Feature Suggestions',
+    body: 'Prodigy generates feature concepts backed by evidence, including expected outcomes and measurable success metrics.'
+  },
+  {
+    title: 'Implementation-Ready Specs',
+    body: 'Get detailed specifications with UX flows, acceptance criteria, and technical context that developers can act on immediately.'
+  }
+] as const;
+
+export const demoTabs = [
+  {
+    id: 'feedback',
+    label: 'Customer Feedback',
+    description:
+      'See how Prodigy analyzes support tickets, NPS comments, and user interviews to identify recurring pain points.'
+  },
+  {
+    id: 'analytics',
+    label: 'Usage Analytics',
+    description:
+      'Watch Prodigy connect to your analytics data and reveal where users struggle or abandon value.'
+  },
+  {
+    id: 'jira',
+    label: 'JIRA Exports',
+    description:
+      'See how ranked problems turn into ready-to-assign JIRA tickets with acceptance criteria and technical prompts.'
+  },
+  {
+    id: 'ai',
+    label: 'AI Analysis',
+    description:
+      'Experience the power of AI-driven insights—automatic clustering, sentiment analysis, and smart feature suggestions.'
   }
 ] as const;
 

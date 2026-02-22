@@ -1,6 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import { Reveal } from '@/components/reveal';
 import {
+  aiCapabilities,
   comparisonCards,
+  demoTabs,
   faqs,
   flowSteps,
   navLinks,
@@ -21,6 +26,8 @@ function SectionHeading({ eyebrow, title, id }: { eyebrow: string; title: string
 }
 
 export default function Home() {
+  const [activeDemo, setActiveDemo] = useState<string>(demoTabs[0].id);
+
   return (
     <main>
       <header className="mx-auto flex w-[min(1120px,92vw)] items-center justify-between gap-4 py-7">
@@ -91,13 +98,89 @@ export default function Home() {
             id="sources"
             title="Real product signals, not isolated opinions."
           />
-          <section className="grid gap-4 md:grid-cols-2" aria-labelledby="sources">
+          <section className="grid gap-4 md:grid-cols-3" aria-labelledby="sources">
             {sourceCards.map((card) => (
               <article key={card.title} className="surface-card rounded-2xl p-5">
                 <h3 className="text-lg font-bold">{card.title}</h3>
                 <p className="prose-muted mt-2">{card.body}</p>
               </article>
             ))}
+          </section>
+        </Reveal>
+
+        <Reveal className="pt-20" delay={0.06}>
+          <SectionHeading
+            eyebrow="AI-Powered"
+            id="ai"
+            title="Intelligence that transforms product decisions."
+          />
+          <section className="grid gap-4 md:grid-cols-2" aria-labelledby="ai">
+            {aiCapabilities.map((capability) => (
+              <article key={capability.title} className="surface-card rounded-2xl p-5">
+                <h3 className="text-lg font-bold">{capability.title}</h3>
+                <p className="prose-muted mt-2">{capability.body}</p>
+              </article>
+            ))}
+          </section>
+        </Reveal>
+
+        <Reveal className="pt-20" delay={0.07}>
+          <SectionHeading eyebrow="See It In Action" id="demos" title="Watch Prodigy in action." />
+          <section aria-labelledby="demos">
+            {/* Tab Navigation */}
+            <div className="mb-6 flex flex-wrap gap-2">
+              {demoTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveDemo(tab.id)}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    activeDemo === tab.id
+                      ? 'bg-accent text-white shadow-[0_10px_24px_rgba(217,77,43,0.35)]'
+                      : 'border border-[var(--line)] bg-white/60 text-ink hover:bg-white'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Demo Content Area */}
+            <div className="surface-card rounded-2xl p-6">
+              <p className="text-lg font-medium text-ink">
+                {demoTabs.find((t) => t.id === activeDemo)?.description}
+              </p>
+
+              {/* Placeholder for Screen Recording */}
+              <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#f5f0eb] to-[#e8e2dc] flex items-center justify-center">
+                <div className="text-center">
+                  <div className="mb-3 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
+                    <svg
+                      className="h-8 w-8 text-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-sm font-medium text-muted">Screen Recording Coming Soon</p>
+                  <p className="mt-1 text-xs text-muted/70">
+                    Demo for {demoTabs.find((t) => t.id === activeDemo)?.label}
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
         </Reveal>
 

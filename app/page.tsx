@@ -17,7 +17,9 @@ import {
 function SectionHeading({ eyebrow, title, id }: { eyebrow: string; title: string; id: string }) {
   return (
     <div className="mb-7">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#5d453e]">{eyebrow}</p>
+      <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--accent-strong)]">
+        {eyebrow}
+      </p>
       <h2 id={id} className="max-w-3xl font-display text-3xl leading-tight md:text-5xl">
         {title}
       </h2>
@@ -31,7 +33,7 @@ export default function Home() {
   return (
     <main>
       <header className="mx-auto flex w-[min(1120px,92vw)] items-center justify-between gap-4 py-7">
-        <a href="#top" className="font-display text-2xl tracking-wide">
+        <a href="#top" className="font-display text-2xl tracking-wide text-ink">
           Prodigy
         </a>
         <nav className="hidden items-center gap-5 md:flex" aria-label="Primary navigation">
@@ -39,7 +41,7 @@ export default function Home() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-semibold text-muted transition hover:text-ink"
+              className="text-sm font-semibold text-muted transition hover:text-[color:var(--accent-strong)]"
             >
               {link.label}
             </a>
@@ -47,7 +49,7 @@ export default function Home() {
         </nav>
         <a
           href="#cta"
-          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-white shadow-[0_10px_24px_rgba(217,77,43,0.35)] transition hover:-translate-y-0.5"
+          className="rounded-full bg-[color:var(--accent-strong)] px-4 py-2 text-sm font-bold text-white shadow-[0_16px_30px_rgba(35,70,81,0.35)] transition hover:-translate-y-0.5"
         >
           Get Early Access
         </a>
@@ -55,7 +57,7 @@ export default function Home() {
 
       <div id="top" className="mx-auto w-[min(1120px,92vw)] pb-16">
         <Reveal className="py-10 md:py-14">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#5d453e]">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--accent-strong)]">
             Product Direction Engine
           </p>
           <h1 className="max-w-xl font-display text-4xl leading-tight md:text-7xl">
@@ -69,22 +71,22 @@ export default function Home() {
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#cta"
-              className="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(217,77,43,0.35)] transition hover:-translate-y-0.5"
+              className="rounded-full bg-[color:var(--accent-strong)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_16px_30px_rgba(35,70,81,0.35)] transition hover:-translate-y-0.5"
             >
               Request Demo
             </a>
             <a
               href="#outputs"
-              className="rounded-full border border-[var(--line)] bg-white/60 px-5 py-2.5 text-sm font-bold text-ink transition hover:-translate-y-0.5"
+              className="rounded-full border border-[color:var(--accent-soft)] bg-white/70 px-5 py-2.5 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:border-[color:var(--accent-strong)]"
             >
               View Sample Output
             </a>
           </div>
-          <ul className="surface-card mt-9 grid gap-2 rounded-2xl p-3 md:grid-cols-5">
+          <ul className="glass-card mt-9 grid gap-2 rounded-2xl p-3 md:grid-cols-5">
             {pipeline.map((item) => (
               <li
                 key={item}
-                className="rounded-xl border border-[#d94d2b2e] bg-gradient-to-br from-white to-[#fbf0eb] p-3 text-center text-sm font-extrabold"
+                className="rounded-xl border border-[color:var(--accent-soft)] bg-[color:var(--pearl)] p-3 text-center text-sm font-extrabold text-[color:var(--accent-strong)]"
               >
                 {item}
               </li>
@@ -100,7 +102,7 @@ export default function Home() {
           />
           <section className="grid gap-4 md:grid-cols-3" aria-labelledby="sources">
             {sourceCards.map((card) => (
-              <article key={card.title} className="surface-card rounded-2xl p-5">
+              <article key={card.title} className="glass-card rounded-2xl p-5">
                 <h3 className="text-lg font-bold">{card.title}</h3>
                 <p className="prose-muted mt-2">{card.body}</p>
               </article>
@@ -116,7 +118,7 @@ export default function Home() {
           />
           <section className="grid gap-4 md:grid-cols-2" aria-labelledby="ai">
             {aiCapabilities.map((capability) => (
-              <article key={capability.title} className="surface-card rounded-2xl p-5">
+              <article key={capability.title} className="glass-card rounded-2xl p-5">
                 <h3 className="text-lg font-bold">{capability.title}</h3>
                 <p className="prose-muted mt-2">{capability.body}</p>
               </article>
@@ -135,8 +137,8 @@ export default function Home() {
                   onClick={() => setActiveDemo(tab.id)}
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                     activeDemo === tab.id
-                      ? 'bg-accent text-white shadow-[0_10px_24px_rgba(217,77,43,0.35)]'
-                      : 'border border-[var(--line)] bg-white/60 text-ink hover:bg-white'
+                      ? 'bg-[color:var(--accent-strong)] text-white shadow-[0_16px_30px_rgba(35,70,81,0.35)]'
+                      : 'border border-[color:var(--accent-soft)] bg-white/70 text-ink hover:border-[color:var(--accent-strong)]'
                   }`}
                 >
                   {tab.label}
@@ -145,13 +147,13 @@ export default function Home() {
             </div>
 
             {/* Demo Content Area */}
-            <div className="surface-card rounded-2xl p-6">
+            <div className="glass-card rounded-2xl p-6">
               <p className="text-lg font-medium text-ink">
                 {demoTabs.find((t) => t.id === activeDemo)?.description}
               </p>
 
               {/* Screen Recording Video */}
-              <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#f5f0eb] to-[#e8e2dc]">
+              <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#f4eee7] to-[#e6ded4]">
                 <video
                   className="h-full w-full object-cover"
                   controls
@@ -178,11 +180,13 @@ export default function Home() {
             {flowSteps.map((step) => (
               <article
                 key={step.step}
-                className="surface-card rounded-2xl bg-gradient-to-br from-white to-[#fff1eb] p-5"
+                className="glass-card rounded-2xl bg-gradient-to-br from-[color:var(--pearl)] to-white p-5"
               >
-                <p className="text-sm font-extrabold tracking-[0.08em] text-accent">{step.step}</p>
+                <p className="text-sm font-extrabold tracking-[0.08em] text-[color:var(--accent-strong)]">
+                  {step.step}
+                </p>
                 <h3 className="mt-2 text-lg font-bold">{step.title}</h3>
-                <p className="mt-1 font-semibold text-[#393d44]">{step.question}</p>
+                <p className="mt-1 font-semibold text-[#3b444d]">{step.question}</p>
                 <p className="prose-muted mt-2">{step.body}</p>
               </article>
             ))}
@@ -197,7 +201,7 @@ export default function Home() {
           />
           <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4" aria-labelledby="outputs">
             {outputCards.map((card) => (
-              <article key={card.title} className="surface-card rounded-2xl p-5">
+              <article key={card.title} className="glass-card rounded-2xl p-5">
                 <h3 className="text-lg font-bold">{card.title}</h3>
                 <p className="prose-muted mt-2">{card.body}</p>
               </article>
@@ -213,7 +217,7 @@ export default function Home() {
           />
           <section className="grid gap-4 md:grid-cols-3" aria-labelledby="why">
             {comparisonCards.map((card) => (
-              <article key={card.title} className="surface-card rounded-2xl p-5">
+              <article key={card.title} className="glass-card rounded-2xl p-5">
                 <h3 className="text-lg font-bold">{card.title}</h3>
                 <p className="prose-muted mt-2">{card.current}</p>
                 <p className="mt-2 font-bold">{card.contrast}</p>
@@ -229,15 +233,15 @@ export default function Home() {
             title="Prioritization logic your team can inspect."
           />
           <section
-            className="surface-card rounded-[1.5rem] border border-[var(--line)] bg-gradient-to-b from-white to-[#feece2] p-6"
+            className="glass-card rounded-[1.5rem] border border-[color:var(--accent-soft)] bg-gradient-to-b from-[color:var(--pearl)] to-white p-6"
             aria-labelledby="method"
           >
-            <p className="text-[#4a4f57]">
+            <p className="text-[#44515c]">
               Ranking combines <strong>frequency</strong>, <strong>impact</strong>,{' '}
               <strong>urgency</strong>, and
               <strong> confidence</strong> from both feedback and behavioral analytics signals.
             </p>
-            <p className="mt-3 text-[#4a4f57]">
+            <p className="mt-3 text-[#44515c]">
               Every insight includes source traceability and decision rationale so PM, design, and
               engineering stay aligned.
             </p>
@@ -247,29 +251,29 @@ export default function Home() {
         <Reveal className="pt-20" delay={0.18}>
           <section
             id="cta"
-            className="surface-card rounded-[1.5rem] border border-[#d94d2b40] bg-gradient-to-b from-white to-[#ffe7da] px-6 py-12 text-center"
+            className="glass-card rounded-[1.5rem] border border-[color:var(--accent-soft)] bg-gradient-to-b from-[color:var(--pearl)] to-white px-6 py-12 text-center"
             aria-labelledby="cta-title"
           >
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#5d453e]">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--accent-strong)]">
               Get Started
             </p>
             <h2 id="cta-title" className="font-display text-3xl md:text-5xl">
               Bring clarity to what to build next.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-[#4a5058]">
+            <p className="mx-auto mt-3 max-w-2xl text-[#44515c]">
               Replace reactive roadmap debates with ranked opportunities and implementation-ready
               specs.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <a
                 href="mailto:hello@prodigy.ai"
-                className="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(217,77,43,0.35)] transition hover:-translate-y-0.5"
+                className="rounded-full bg-[color:var(--accent-strong)] px-5 py-2.5 text-sm font-bold text-white shadow-[0_16px_30px_rgba(35,70,81,0.35)] transition hover:-translate-y-0.5"
               >
                 Book Demo
               </a>
               <a
                 href="mailto:hello@prodigy.ai"
-                className="rounded-full border border-[var(--line)] bg-white/60 px-5 py-2.5 text-sm font-bold text-ink transition hover:-translate-y-0.5"
+                className="rounded-full border border-[color:var(--accent-soft)] bg-white/70 px-5 py-2.5 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:border-[color:var(--accent-strong)]"
               >
                 Join Waitlist
               </a>
@@ -283,7 +287,7 @@ export default function Home() {
             {faqs.map((item) => (
               <article
                 key={item.question}
-                className="rounded-2xl border border-[var(--line)] bg-white/75 p-5"
+                className="glass-card rounded-2xl border border-[color:var(--accent-soft)] p-5"
               >
                 <h3 className="text-base font-bold">{item.question}</h3>
                 <p className="prose-muted mt-1">{item.answer}</p>

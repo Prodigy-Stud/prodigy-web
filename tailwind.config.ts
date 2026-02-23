@@ -9,10 +9,10 @@ const config: Config = {
         display: ['var(--font-fraunces)', 'ui-serif', 'Georgia', 'serif']
       },
       colors: {
-        ink: '#1f2225',
-        muted: '#5f656d',
-        accent: '#d94d2b',
-        soft: '#fbf9f4'
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
+        soft: 'var(--bg)'
       },
       boxShadow: {
         soft: '0 20px 50px rgba(20,20,20,0.09)'

@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f3f5f8;
-  --surface: rgba(255, 255, 255, 0.78);
-  --ink: #141c24;
-  --muted: #5a6572;
-  --accent: #3b61ff;
-  --accent-strong: #2447e8;
-  --accent-soft: rgba(59, 97, 255, 0.16);
-  --line: rgba(20, 28, 36, 0.12);
-  --shadow: 0 26px 60px rgba(18, 28, 40, 0.14);
-  --glow: rgba(59, 97, 255, 0.35);
-  --pearl: #f7f9fc;
+  --bg: #090d16;
+  --surface: rgba(15, 22, 34, 0.7);
+  --ink: #e8edf8;
+  --muted: #98a6bd;
+  --accent: #7b8cff;
+  --accent-strong: #94a3ff;
+  --accent-soft: rgba(148, 163, 255, 0.22);
+  --line: rgba(173, 190, 219, 0.2);
+  --shadow: 0 28px 60px rgba(3, 7, 16, 0.5);
+  --glow: rgba(123, 140, 255, 0.35);
+  --pearl: #101a2a;
 }
 
 body {
   background:
-    radial-gradient(circle at 10% 10%, rgba(195, 214, 255, 0.6) 0%, transparent 38%),
-    radial-gradient(circle at 90% 12%, rgba(255, 215, 170, 0.45) 0%, transparent 38%),
-    radial-gradient(circle at 18% 90%, rgba(209, 231, 255, 0.55) 0%, transparent 42%),
-    linear-gradient(180deg, #f3f5f8 0%, #f7f8fb 45%, #fbfcff 100%);
+    radial-gradient(circle at 8% 8%, rgba(72, 93, 255, 0.25) 0%, transparent 35%),
+    radial-gradient(circle at 86% 12%, rgba(68, 184, 255, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 20% 92%, rgba(63, 136, 255, 0.18) 0%, transparent 45%),
+    linear-gradient(180deg, #090d16 0%, #0c1320 45%, #0b1220 100%);
   color: var(--ink);
 }
 
@@ -37,8 +37,8 @@ main::before {
   width: 320px;
   height: 320px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(59, 97, 255, 0.32) 0%, transparent 68%);
-  filter: blur(8px);
+  background: radial-gradient(circle, rgba(123, 140, 255, 0.28) 0%, transparent 68%);
+  filter: blur(20px);
   pointer-events: none;
   z-index: -1;
 }
@@ -50,8 +50,8 @@ main::after {
   width: 420px;
   height: 420px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 199, 145, 0.48) 0%, transparent 70%);
-  filter: blur(14px);
+  background: radial-gradient(circle, rgba(70, 214, 255, 0.2) 0%, transparent 72%);
+  filter: blur(24px);
   pointer-events: none;
   z-index: -1;
 }
@@ -67,14 +67,14 @@ main::after {
 }
 
 .glass-card {
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62));
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: linear-gradient(160deg, rgba(19, 28, 44, 0.88), rgba(14, 21, 33, 0.78));
+  border: 1px solid rgba(162, 178, 214, 0.22);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
 }
 
 .accent-pill {
   background: var(--accent-soft);
   color: var(--accent-strong);
-  border: 1px solid rgba(35, 70, 81, 0.2);
+  border: 1px solid rgba(162, 178, 214, 0.28);
 }

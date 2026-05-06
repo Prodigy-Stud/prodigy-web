@@ -1,13 +1,59 @@
 export const navLinks = [
+  { href: '#product-demo', label: 'Watch' },
   { href: '#sources', label: 'Sources' },
-  { href: '#demos', label: 'See It In Action' },
+  { href: '#demos', label: 'Scenarios' },
   { href: '#how', label: 'How it Works' },
   { href: '#outputs', label: 'Outputs' },
   { href: '#why', label: 'Why Prodigy' },
   { href: '#faq', label: 'FAQ' }
 ] as const;
 
+/** Order must match on-page section ids for scroll-spy nav highlighting */
+export const navScrollSpyIds = navLinks.map((l) => l.href.replace('#', ''));
+
+export const hero = {
+  eyebrow: 'Prodigy',
+  headline: 'Turn product signals into production-ready code',
+  headlineLines: ['Turn product signals', 'into production-ready code'] as const,
+  storyLines: [
+    'Feedback and analytics expose where the product breaks.',
+    'Prodigy ranks what to build—and drafts the tickets and prompts.',
+    'Your team ships code backed by traceable rationale.'
+  ] as const,
+  subhead:
+    'Ingest feedback and usage analytics, rank what matters, and export implementation-ready plans—Jira drafts, agent handoffs, and dispatches your repo can merge.'
+} as const;
+
 export const pipeline = ['Signals', 'Insights', 'Ideas', 'Specs', 'Code'] as const;
+
+/** Full-width pipeline diagram: label + one-line story for hover (matches product flow) */
+export const pipelineFlowSteps = [
+  {
+    id: 'signals',
+    label: 'Signals',
+    description: 'Ingest feedback & usage into one ranked stream.'
+  },
+  {
+    id: 'insights',
+    label: 'Insights',
+    description: 'Cluster, score, and explain what users need most.'
+  },
+  {
+    id: 'ideas',
+    label: 'Ideas',
+    description: 'Turn evidence into opportunities and priorities.'
+  },
+  {
+    id: 'specs',
+    label: 'Specs',
+    description: 'Produce execution-ready plans, drafts, and context.'
+  },
+  {
+    id: 'code',
+    label: 'Code',
+    description: 'Hand off to Jira, agents, and your repo with confidence.'
+  }
+] as const;
 
 export const sourceCards = [
   {

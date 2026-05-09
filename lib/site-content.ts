@@ -1,180 +1,217 @@
-export const navLinks = [
-  { href: '#how', label: 'How It Works' },
-  { href: '#features', label: 'Core Features' },
-  { href: '#ops', label: 'Live Ops' },
-  { href: '#safety', label: 'Safety' },
-  { href: '#integrations', label: 'Integrations' },
-  { href: '#impact', label: 'Impact' },
-  { href: '#faq', label: 'FAQ' }
+/** Primary site navigation (same paths on localhost and prodigy.com). */
+export const mainNavLinks = [
+  { href: '/product', label: 'Product' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/team', label: 'Team' },
+  { href: '/contact', label: 'Contact' }
 ] as const;
 
-export const pipeline = ['Listen', 'Decide', 'Ship'] as const;
+export const hero = {
+  headline: 'Agents Decide, Agents Code',
+  headlineLines: ['Agents Decide,', 'Agents Code'] as const,
+  subhead: 'We take your product feedback, create opportunities and ship code for you.',
+  realityLines: [
+    'User feedback lives in support tools.',
+    'Usage analytics live in dashboards.',
+    'Decisions live in meetings.',
+    'Implementation lives in Jira and GitHub.'
+  ] as const,
+  missionQuestion:
+    'What if we can have agents orchestrated to generate ideas as tickets, pick them up and ship production ready code?',
+  missionClosing: 'This is the mission with which we have launched Prodigy.'
+} as const;
+
+export const pipeline = ['Signals', 'Insights', 'Ideas', 'Specs', 'Code'] as const;
+
+/** Full-width pipeline diagram: label + one-line story for hover (matches product flow) */
+export const pipelineFlowSteps = [
+  {
+    id: 'signals',
+    label: 'Signals',
+    description: 'Ingest feedback & usage into one ranked stream.'
+  },
+  {
+    id: 'insights',
+    label: 'Insights',
+    description: 'Cluster, score, and explain what users need most.'
+  },
+  {
+    id: 'ideas',
+    label: 'Ideas',
+    description: 'Turn evidence into opportunities and priorities.'
+  },
+  {
+    id: 'specs',
+    label: 'Specs',
+    description: 'Produce execution-ready plans, drafts, and context.'
+  },
+  {
+    id: 'code',
+    label: 'Code',
+    description: 'Hand off to Jira, agents, and your repo with confidence.'
+  }
+] as const;
 
 export const sourceCards = [
   {
-    title: 'Feedback + Analytics Ingestion',
-    body: 'Unify support tickets, NPS comments, interviews, Slack threads, and behavioral analytics into one normalized signal stream.'
+    title: 'Customer Feedback',
+    body: 'Support tickets, NPS comments, sales calls, interview notes, and reviews are clustered into recurring problem themes. Prodigy uses AI to extract pain points, sentiment, and feature requests from unstructured text.'
   },
   {
-    title: 'Connector-Style Integrations',
-    body: 'Pluggable ingestion for Slack and analytics sources, with mock/local-file inputs for fast testing and onboarding.'
+    title: 'Usage Analytics',
+    body: 'Funnels, drop-offs, session behavior, and event trends reveal where users struggle or abandon value. Connect your analytics tools to identify friction points automatically.'
   },
   {
-    title: 'Persisted Signal Layer',
-    body: 'Signal processing, plans, and task state are persisted for full product and ops visibility across teams.'
+    title: 'JIRA Exports',
+    body: 'Export ranked problems and feature concepts directly to JIRA with ready-to-assign tickets, acceptance criteria, and technical prompts for your engineering team.'
   }
 ] as const;
 
 export const flowSteps = [
   {
     step: '01',
-    title: 'Listen',
-    question: 'What is happening across customers and product usage?',
-    body: 'Prodigy pulls and normalizes customer feedback plus behavioral analytics so teams stop triaging in silos.'
+    title: 'Signal -> Insight',
+    question: 'What are users actually telling us?',
+    body: 'Prodigy aggregates explicit and implicit signals, then ranks problems by impact, urgency, frequency, and confidence.'
   },
   {
     step: '02',
-    title: 'Decide',
-    question: 'Which opportunities deserve engineering attention now?',
-    body: 'Signals become prioritized opportunities and structured ticket drafts (EPIC, DESIGN, BE, FE, QA) with execution context.'
+    title: 'Insight -> Idea',
+    question: 'What should we build next?',
+    body: 'It proposes feature concepts mapped to user pain, expected outcomes, and measurable success metrics.'
   },
   {
     step: '03',
-    title: 'Ship',
-    question: 'How does this move from task to merged PR?',
-    body: 'Prodigy dispatches to coding agents and runs optional git automation (prepare, commit, push, PR) with human oversight.'
+    title: 'Idea -> Transition',
+    question: 'How do we evolve without chaos?',
+    body: 'Workflow impact, migration planning, dependency mapping, and rollout strategy are generated before execution starts.'
+  },
+  {
+    step: '04',
+    title: 'Spec -> Implementation',
+    question: 'What does engineering need?',
+    body: 'Prodigy outputs implementation-ready specs with UX flows, data model implications, and decision rationale.'
   }
 ] as const;
 
 export const outputCards = [
   {
-    title: 'Opportunity Discovery Engine',
-    body: 'Converts raw product signals into structured opportunities with clear prioritization and execution context.'
+    title: 'Ranked Problem Clusters',
+    body: 'Prioritized by business impact, urgency, and confidence score.'
   },
   {
-    title: 'Ticket Generation',
-    body: 'Drafts Jira-style work items across EPIC, DESIGN, BE, FE, and QA for faster handoff into delivery.'
+    title: 'Feature Concepts',
+    body: 'Evidence-backed ideas tied directly to user friction and goals.'
   },
   {
-    title: 'Agent Dispatch System',
-    body: 'Queues tasks to coding agents through Codex and Claude-compatible bridge scaffolding with callback updates.'
+    title: 'Rollout + Risk Plan',
+    body: 'Dependencies, rollout phases, and failure risks before launch.'
   },
   {
-    title: 'Execution Bridge + Git Automation',
-    body: 'Optional prepare, commit, push, and PR flow with branch handling, metadata, and execution payload traces.'
+    title: 'Implementation Specs',
+    body: 'UX flows, acceptance logic, and data/API implications for execution.'
   }
 ] as const;
 
 export const comparisonCards = [
   {
-    title: 'Queue and Idempotency Controls',
-    current: 'Prevents duplicate runs and runaway task storms.',
-    contrast: 'Built-in controls reduce noisy retries and unsafe automation loops.'
+    title: 'Dashboards',
+    current: 'Show what happened.',
+    contrast: 'Prodigy tells you what to build next.'
   },
   {
-    title: 'Retry + Worker Limits + Jitter',
-    current: 'Manages throughput and backpressure.',
-    contrast: 'Keeps autonomous execution stable under real team workloads.'
+    title: 'IDE Copilots',
+    current: 'Help write code faster.',
+    contrast: 'Prodigy decides which code is worth writing.'
   },
   {
-    title: 'No-Op Protection',
-    current: 'Fails tasks that produce no code change.',
-    contrast: 'Prevents false-success runs and protects trust in outputs.'
+    title: 'Static PM Docs',
+    current: 'Capture assumptions manually.',
+    contrast: 'Prodigy generates evidence-backed direction.'
   }
 ] as const;
 
 export const aiCapabilities = [
   {
-    title: 'Operator UI (Chat-Style Inbox)',
-    body: 'WhatsApp-like task threads with timeline updates, severity tiers, tabbed queues, and dismiss/cleanup workflows.'
+    title: 'Natural Language Queries',
+    body: 'Ask questions in plain English and get instant insights from your product data. No SQL or analytics expertise required.'
   },
   {
-    title: 'Rich Implementation Output',
-    body: 'Each run returns formatted summaries, touched files, tests, and error details so teams can review fast.'
+    title: 'Automatic Problem Clustering',
+    body: 'AI automatically groups similar feedback, identifies patterns, and surfaces the most impactful issues affecting your users.'
   },
   {
-    title: 'Auth + Machine Clients',
-    body: 'Bearer/JWT machine-client model with docs and environment-driven local bypass for controlled development.'
+    title: 'Smart Feature Suggestions',
+    body: 'Prodigy generates feature concepts backed by evidence, including expected outcomes and measurable success metrics.'
   },
   {
-    title: 'Testing + Migrations',
-    body: 'Alembic migrations, backend coverage for bridge and cleanup flows, and end-to-end local workflows.'
+    title: 'Implementation-Ready Specs',
+    body: 'Get detailed specifications with UX flows, acceptance criteria, and technical context that developers can act on immediately.'
   }
 ] as const;
 
 export const demoTabs = [
   {
     id: 'feedback',
-    label: 'Thread View',
+    label: 'Customer Feedback',
     description:
-      'Chat-style ticket thread with status transitions from opened to running to implemented or failed.'
+      'See how Prodigy analyzes support tickets, NPS comments, and user interviews to identify recurring pain points.'
   },
   {
     id: 'analytics',
-    label: 'Timeline',
+    label: 'Usage Analytics',
     description:
-      'Live timeline updates show severity, agent activity, completion markers, and execution outcomes.'
+      'Watch Prodigy connect to your analytics data and reveal where users struggle or abandon value.'
   },
   {
     id: 'jira',
-    label: 'Buckets',
+    label: 'JIRA Exports',
     description:
-      'Operational buckets keep work organized across new, attention, quick wins, and done.'
+      'See how ranked problems turn into ready-to-assign JIRA tickets with acceptance criteria and technical prompts.'
   },
   {
     id: 'ai',
-    label: 'PR Output',
+    label: 'AI Analysis',
     description:
-      'Implementation output includes rationale, changed files, tests, and errors for fast human review.'
+      'Experience the power of AI-driven insights—automatic clustering, sentiment analysis, and smart feature suggestions.'
+  }
+] as const;
+
+/** High-level product story (marketing site — intentionally light on implementation detail). */
+export const productPillars = [
+  {
+    title: 'Ideas & opportunities',
+    body: 'Prodigy helps teams turn noisy signals into ranked opportunities—so prioritization starts from evidence, not opinion.'
+  },
+  {
+    title: 'Smart ticket platform',
+    body: 'From insight to actionable work: structured drafts, acceptance-ready context, and handoffs that match how your org ships.'
+  },
+  {
+    title: 'Push to git',
+    body: 'When specs are ready, Prodigy is built to connect planning to implementation—including paths your repo and agents can merge with confidence.'
   }
 ] as const;
 
 export const faqs = [
   {
-    question: 'Is Prodigy fully autonomous with no human control?',
+    question: 'Does Prodigy replace product managers?',
     answer:
-      'No. Prodigy is designed for human oversight. Teams control approvals, monitor execution, and decide what gets merged.'
+      'No. Prodigy strengthens PM judgment with clear signal aggregation, ranked opportunities, and execution-ready artifacts.'
   },
   {
-    question: 'Can we integrate feedback, analytics, and engineering systems together?',
+    question: 'Can Prodigy use both feedback and analytics?',
     answer:
-      'Yes. Prodigy unifies feedback and analytics signals, then maps output to Jira-style workflows and GitHub-based delivery.'
+      'Yes. It is built specifically to combine qualitative feedback with quantitative usage behavior.'
   },
   {
-    question: 'What protects us from unsafe or noisy automation?',
-    answer:
-      'Safety layers include idempotency controls, queue management, retries with jitter, worker limits, and no-op protection.'
+    question: 'Is Prodigy a coding copilot?',
+    answer: 'No. Prodigy focuses on deciding what to build and handing teams build-ready specs.'
   },
   {
-    question: 'Does Prodigy support serious engineering workflows?',
+    question: 'How does Prodigy fit our stack?',
     answer:
-      'Yes. Prodigy includes orchestration, agent dispatch, status callbacks, and optional git automation into pull requests.'
-  }
-] as const;
-
-export const integrations = [
-  'Slack',
-  'Product Analytics',
-  'GitHub',
-  'Jira-Style Workflows',
-  'Machine Clients (Bearer/JWT)'
-] as const;
-
-export const impactCards = [
-  {
-    title: 'For Engineering Leaders',
-    points: [
-      'Reduce triage toil across product and engineering.',
-      'Shorten cycle time from customer signal to merged PR.',
-      'Keep humans in the final approval loop.'
-    ]
-  },
-  {
-    title: 'For IC Developers',
-    points: [
-      'Receive cleaner ticket context with rationale.',
-      'Spend less time on repetitive implementation chores.',
-      'Review PR-ready outputs with changed files and test evidence.'
-    ]
+      'It sits upstream of design and engineering workflows by providing prioritized direction and implementation context.'
   }
 ] as const;

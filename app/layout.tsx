@@ -14,13 +14,12 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: 'Prodigy | Product signals to production-ready code',
-  description:
-    'Turn customer feedback and usage analytics into ranked opportunities, implementation-ready specs, and agent handoffs your team can merge.'
+  title: { default: 'Prodigy', template: '%s | Prodigy' },
+  description: 'We take your product feedback, create opportunities and ship code for you.'
 };
 
 export const viewport: Viewport = {
-  themeColor: '#f4f2ee'
+  themeColor: '#0f766e'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

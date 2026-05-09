@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { demoTabs } from '@/lib/site-content';
@@ -37,7 +38,7 @@ export function DemoScenarios({ activeDemo, onSelect }: Props) {
                 {selected ? (
                   <motion.span
                     layoutId="demo-tab"
-                    className="absolute inset-0 -z-10 rounded-full bg-[color:var(--accent-deep)] shadow-[0_10px_36px_rgba(37,99,235,0.35)]"
+                    className="absolute inset-0 -z-10 rounded-full bg-[color:var(--accent-deep)] shadow-[0_10px_36px_rgba(13,148,136,0.35)]"
                     transition={{ type: 'spring', stiffness: 400, damping: 34 }}
                   />
                 ) : null}
@@ -61,13 +62,13 @@ export function DemoScenarios({ activeDemo, onSelect }: Props) {
               {active?.description}
             </p>
             <p className="prose-muted mt-5 text-sm">
-              <a
-                href="#product-demo"
+              <Link
+                href="/#product-demo"
                 className="inline-flex items-center gap-1 font-semibold text-[color:var(--accent-deep)] transition-[gap] duration-200 hover:gap-1.5"
               >
                 <span>Jump to the video</span>
                 <span aria-hidden>→</span>
-              </a>
+              </Link>
             </p>
           </motion.div>
         </AnimatePresence>

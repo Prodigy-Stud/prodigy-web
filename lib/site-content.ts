@@ -1,27 +1,25 @@
-export const navLinks = [
-  { href: '#product-demo', label: 'Watch' },
-  { href: '#sources', label: 'Sources' },
-  { href: '#demos', label: 'Scenarios' },
-  { href: '#how', label: 'How it Works' },
-  { href: '#outputs', label: 'Outputs' },
-  { href: '#why', label: 'Why Prodigy' },
-  { href: '#faq', label: 'FAQ' }
+/** Primary site navigation (same paths on localhost and prodigy.com). */
+export const mainNavLinks = [
+  { href: '/product', label: 'Product' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/team', label: 'Team' },
+  { href: '/contact', label: 'Contact' }
 ] as const;
 
-/** Order must match on-page section ids for scroll-spy nav highlighting */
-export const navScrollSpyIds = navLinks.map((l) => l.href.replace('#', ''));
-
 export const hero = {
-  eyebrow: 'Prodigy',
-  headline: 'Turn product signals into production-ready code',
-  headlineLines: ['Turn product signals', 'into production-ready code'] as const,
-  storyLines: [
-    'Feedback and analytics expose where the product breaks.',
-    'Prodigy ranks what to build—and drafts the tickets and prompts.',
-    'Your team ships code backed by traceable rationale.'
+  headline: 'Agents Decide, Agents Code',
+  headlineLines: ['Agents Decide,', 'Agents Code'] as const,
+  subhead: 'We take your product feedback, create opportunities and ship code for you.',
+  realityLines: [
+    'User feedback lives in support tools.',
+    'Usage analytics live in dashboards.',
+    'Decisions live in meetings.',
+    'Implementation lives in Jira and GitHub.'
   ] as const,
-  subhead:
-    'Ingest feedback and usage analytics, rank what matters, and export implementation-ready plans—Jira drafts, agent handoffs, and dispatches your repo can merge.'
+  missionQuestion:
+    'What if we can have agents orchestrated to generate ideas as tickets, pick them up and ship production ready code?',
+  missionClosing: 'This is the mission with which we have launched Prodigy.'
 } as const;
 
 export const pipeline = ['Signals', 'Insights', 'Ideas', 'Specs', 'Code'] as const;
@@ -177,6 +175,22 @@ export const demoTabs = [
     label: 'AI Analysis',
     description:
       'Experience the power of AI-driven insights—automatic clustering, sentiment analysis, and smart feature suggestions.'
+  }
+] as const;
+
+/** High-level product story (marketing site — intentionally light on implementation detail). */
+export const productPillars = [
+  {
+    title: 'Ideas & opportunities',
+    body: 'Prodigy helps teams turn noisy signals into ranked opportunities—so prioritization starts from evidence, not opinion.'
+  },
+  {
+    title: 'Smart ticket platform',
+    body: 'From insight to actionable work: structured drafts, acceptance-ready context, and handoffs that match how your org ships.'
+  },
+  {
+    title: 'Push to git',
+    body: 'When specs are ready, Prodigy is built to connect planning to implementation—including paths your repo and agents can merge with confidence.'
   }
 ] as const;
 

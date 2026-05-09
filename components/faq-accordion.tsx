@@ -18,7 +18,6 @@ export function FaqAccordion({ items }: { items: readonly Item[] }) {
         return (
           <motion.article
             key={item.question}
-            layout
             className="overflow-hidden rounded-2xl border border-[color:var(--line)] bg-[color:var(--surface-elevated)] shadow-[var(--shadow-soft)] transition-shadow hover:shadow-[var(--shadow)]"
             initial={false}
           >
